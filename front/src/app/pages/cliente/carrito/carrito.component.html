@@ -1,0 +1,68 @@
+<h2>Mi Carrito</h2>
+
+<section class="carrito-container">
+
+  <!-- Si el carrito está vacío -->
+  <div *ngIf="carrito.items.length === 0 && !ordenConfirmada" class="carrito-vacio">
+    <p>Tu carrito está vacío.</p>
+  </div>
+
+  <!-- Lista de productos en carrito -->
+  <div class="carrito-lista" *ngIf="carrito.items.length > 0">
+    <div class="producto" *ngFor="let item of carrito.items">
+      <p class="alerta">Este producto puede estar sujeto a cambios</p>
+      <div class="producto-info">
+        <img [src]="'http://localhost:3000/uploads/productos/' + item.producto.imagen_url" alt="Producto">
+        <div class="detalles">
+          <p class="nombre">{{ item.producto.nombre }}</p>
+          <div class="acciones">
+            <span>{{ item.cantidad }}x</span>
+            <button class="btn-eliminar" (click)="eliminarItem(item.id)">
+              <i class="pi pi-trash"></i>
+            </button>
+          </div>
+        </div>
+        <div class="precio">
+          <p class="valor">{{ item.producto.precio | currency }}</p>
+          <small>Subtotal: {{ item.producto.precio * item.cantidad | currency }}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Resumen y acciones -->
+  <div class="carrito-resumen" *ngIf="carrito.items.length > 0">
+    <h3>Detalle de la compra</h3>
+
+    <div class="resumen-productos">
+      <p class="total-item">Artículos totales: {{ carrito.items.length }}</p>
+      <div class="item" *ngFor="let item of carrito.items">
+        <p>{{ item.producto.nombre }}</p>
+        <span>{{ item.cantidad }}x</span>
+        <span>{{ item.producto.precio * item.cantidad | currency }}</span>
+      </div>
+    </div>
+
+    <div class="opciones-envio">
+      <p><strong>Envío</strong></p>
+      <label><input type="radio" name="envio"> Efectivo</label>
+      <label><input type="radio" name="envio"> Recogida en el local</label>
+      <label><input type="radio" name="envio"> Coordinar envío</label>
+      <label><input type="radio" name="envio"> Envío por servientrega</label>
+      <label><input type="radio" name="envio"> Envío por cooperativa</label>
+    </div>
+
+    <div class="total">
+      <p>Precio total</p>
+      <h3>{{ calcularTotal() | currency }}</h3>
+    </div>
+
+    <button class="btn-pago" (click)="vaciarCarrito()">Vaciar carrito</button>
+    <button class="btn-pago" (click)="generarOrden()">Generar orden</button>
+  </div>
+
+</section>
+
+
+
+

@@ -1,0 +1,32 @@
+### Crear método de pago
+POST http://localhost:3000/pagos/metodos
+Content-Type: application/json
+
+{
+  "nombre": "Transferencia Bancaria Directa",
+  "descripcion": "Solo se acpetan transferencias directas bancarias"
+}
+
+###
+
+### Ver todos los métodos de pago disponibles
+GET http://localhost:3000/pagos/metodos
+Content-Type: application/json
+
+###
+
+### Registrar un pago asociado a una orden
+POST http://localhost:3000/pagos
+Content-Type: application/json
+
+{
+  "orden_id": 12,
+  "metodo_pago_id": 1,
+  "monto": 25.50
+}
+
+###
+
+### Ver pagos asociados a una orden específica
+GET http://localhost:3000/pagos?orden_id=35
+Content-Type: application/json

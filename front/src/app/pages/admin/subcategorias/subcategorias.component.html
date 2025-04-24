@@ -1,0 +1,51 @@
+<h2>Gestión de Subcategorías</h2>
+
+<!-- Formulario -->
+<section class="formulario-subcategoria">
+  <h3>Nueva Subcategoría</h3>
+
+  <form (ngSubmit)="guardar()" #form="ngForm" class="form-grid-sub">
+    <div>
+      <label for="nombre">Nombre</label>
+      <input type="text" [(ngModel)]="nueva.nombre" name="nombre" id="nombre" required />
+    </div>
+
+    <div>
+      <label for="categoria_id">Categoría</label>
+      <select [(ngModel)]="nueva.categoria_id" name="categoria_id" id="categoria_id" required>
+        <option value="" disabled selected>Seleccione categoría</option>
+        <option *ngFor="let cat of categorias" [value]="cat.id">{{ cat.nombre }}</option>
+      </select>
+    </div>
+
+    <div class="boton">
+      <button type="submit" [disabled]="form.invalid">
+        {{ nueva.id !== null ? 'Actualizar' : 'Guardar' }}
+      </button>
+    </div>
+  </form>
+</section>
+
+<!-- Tabla -->
+<section class="tabla-subcategorias">
+  <h3>Listado de Subcategorías</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Categoría</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sub of subcategorias">
+        <td>{{ sub.nombre }}</td>
+        <td>{{ sub.categoria?.nombre }}</td>
+        <td>
+          <button (click)="editar(sub)">Editar</button>
+          <button (click)="eliminar(sub.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

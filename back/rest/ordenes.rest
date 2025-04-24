@@ -1,0 +1,58 @@
+### 🛒 Crear una orden desde el carrito (usuario registrado)
+POST http://localhost:3000/ordenes
+Content-Type: application/json
+
+{
+  "usuario_id": 2
+}
+
+###
+
+### 🛒 Crear una orden desde el carrito (usuario anónimo)
+POST http://localhost:3000/ordenes
+Content-Type: application/json
+
+{
+  "session_id": "session_abc123"
+}
+
+###
+
+### 📄 Listar órdenes por usuario
+GET http://localhost:3000/ordenes/usuario?usuario_id=2
+Content-Type: application/json
+
+###
+
+### 📄 Listar órdenes por session
+GET http://localhost:3000/ordenes/anonimo?session_id=session_abc123
+Content-Type: application/json
+
+
+### 🔁 Cambiar estado de la orden (requiere ser admin con token)
+PATCH http://localhost:3000/ordenes/7/estado
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiYWRtaW5fYXJ0ZW1hbmlhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NDkwMjg5MCwiZXhwIjoxNzQ0OTA2NDkwfQ.SkKl8i8OO6wJhtaUS9XN_mKhxQma4DRVbfmHtJGh1xw
+Content-Type: application/json
+
+{
+  "estado": "pagado"
+}
+
+### 👤 Cliente: Ver sus propias órdenes (usuario_id = 2)
+GET http://localhost:3000/ordenes/usuario?usuario_id=2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiYWRtaW5fYXJ0ZW1hbmlhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NDkwMjg5MCwiZXhwIjoxNzQ0OTA2NDkwfQ.SkKl8i8OO6wJhtaUS9XN_mKhxQma4DRVbfmHtJGh1xw
+Content-Type: application/json
+
+###
+
+### ❌ Cliente: Intentar ver órdenes de otro usuario (usuario_id = 1)
+GET http://localhost:3000/ordenes/usuario?usuario_id=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiYWRtaW5fYXJ0ZW1hbmlhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NDkwMjg5MCwiZXhwIjoxNzQ0OTA2NDkwfQ.SkKl8i8OO6wJhtaUS9XN_mKhxQma4DRVbfmHtJGh1xw
+Content-Type: application/json
+
+###
+
+### ✅ Admin: Ver órdenes de cualquier usuario
+GET http://localhost:3000/ordenes/usuario?usuario_id=4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiYWRtaW5fYXJ0ZW1hbmlhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NDkxODc4MCwiZXhwIjoxNzQ0OTIyMzgwfQ.F2k4DGzayhS1gY-n2Wga30sdTWgtcyV4aof8Q81y9uw
+Content-Type: application/json

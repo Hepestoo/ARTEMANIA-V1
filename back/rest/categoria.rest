@@ -1,0 +1,3 @@
+### Visualizar todas las categorias
+GET http://localhost:3000/categorias
+Content-Type: application/json

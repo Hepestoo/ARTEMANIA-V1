@@ -1,0 +1,45 @@
+### Obtener carrito por session_id
+GET http://localhost:3000/carrito?session_id=session_abc123
+Content-Type: application/json
+
+### Obtener carrito por usuario_id
+GET http://localhost:3000/carrito?usuario_id=2
+Content-Type: application/json
+
+
+### Agregar producto al carrito (usuario anónimo)
+POST http://localhost:3000/carrito/add
+Content-Type: application/json
+
+{
+  "session_id": "session_abc123",
+  "producto_id": 23,
+  "cantidad": 10
+}
+
+### Agregar producto al carrito (usuario registrado)
+POST http://localhost:3000/carrito/add
+Content-Type: application/json
+
+{
+  "usuario_id": 2,
+  "producto_id": 2,
+  "cantidad": 1
+}
+
+### Actualizar cantidad de item (por ID del item)
+PUT http://localhost:3000/carrito/item/12
+Content-Type: application/json
+
+{
+  "cantidad": 78
+}
+
+### Eliminar item del carrito (por ID del item)
+DELETE http://localhost:3000/carrito/item/8
+
+### Vaciar carrito de session_id
+DELETE http://localhost:3000/carrito/clear?session_id=session_abc123
+
+### Vaciar carrito de usuario_id
+DELETE http://localhost:3000/carrito/clear?usuario_id=2

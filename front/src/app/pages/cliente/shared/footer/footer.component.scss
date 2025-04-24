@@ -1,0 +1,87 @@
+.footer {
+  background-color: #eac2f2;
+  color: #000;
+  padding: 4rem 0 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-col h2 span {
+  color: fuchsia;
+  font-weight: bold;
+}
+
+.footer-col h2 {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.footer-col h3 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-col ul li a:hover {
+  color: fuchsia;
+}
+
+.footer-col p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.footer-bottom {
+  background-color: #1A0C51;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  color: #989898;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.social-icons i:hover {
+  color: fuchsia;
+  cursor: pointer;
+}

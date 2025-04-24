@@ -1,0 +1,157 @@
+.carrito-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #f8f8f8;
+    min-height: 80vh;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  /* Carrito vacío */
+  .carrito-vacio {
+    text-align: center;
+    width: 100%;
+    font-size: 1.2rem;
+    color: #999;
+  }
+  
+  /* Lista de productos */
+  .carrito-lista {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Cada producto en el carrito */
+  .producto {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .alerta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .producto-info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .producto-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .detalles {
+    flex: 1;
+  }
+  
+  .nombre {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .acciones {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .btn-eliminar {
+    background: none;
+    border: none;
+    color: #a000a0;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .precio {
+    text-align: right;
+  }
+  
+  .valor {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .precio small {
+    display: block;
+    color: #666;
+    margin-top: 0.3rem;
+  }
+  
+  /* Resumen de compra */
+  .carrito-resumen {
+    flex: 1;
+    min-width: 280px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .carrito-resumen h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+  
+  .resumen-productos .item {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .total-item {
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .opciones-envio {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .opciones-envio label {
+    display: block;
+    margin-bottom: 0.3rem;
+    cursor: pointer;
+  }
+  
+  .total {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .btn-pago {
+    width: 100%;
+    margin-top: 1rem;
+    background-color: #800080;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-pago:hover {
+    background-color: #5e005e;
+  }
+  

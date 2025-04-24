@@ -1,0 +1,43 @@
+<footer class="footer">
+  <div class="footer-content">
+    <!-- Marca -->
+    <div class="footer-col">
+      <h2><span>Arte</span>mania</h2>
+      <p>Talleres, venta de moldes y decoraciones</p>
+    </div>
+
+   <!-- Tienda -->
+    <div class="footer-col">
+      <h3>Tienda</h3>
+      <ul>
+        <li *ngFor="let sub of subcategorias">
+          <a [routerLink]="['/catalogo']" [queryParams]="{ sub: sub.id }">{{ sub.nombre }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Contacto -->
+    <div class="footer-col">
+      <h3>Contacto</h3>
+      <p><i class="pi pi-map-marker"></i> Buenavista E51-58 y calle 2, San Bartolo, Quito</p>
+      <p><i class="pi pi-envelope"></i> artemania-qtohotmail.com</p>
+      <p><i class="pi pi-phone"></i> 0992731355</p>
+    </div>
+
+    <!-- Horarios -->
+    <div class="footer-col">
+      <h3>Horarios de atención</h3>
+      <p>Lunes a viernes<br>10:00 a 18:00</p>
+      <p>Sábados<br>12:00 a 16:00</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p> Derechos reservados Artemania 2025</p>
+    <div class="social-icons">
+      <i class="pi pi-facebook"></i>
+      <i class="pi pi-tiktok"></i>
+      <i class="pi pi-instagram"></i>
+    </div>
+  </div>
+</footer>

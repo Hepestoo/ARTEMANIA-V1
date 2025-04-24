@@ -1,0 +1,33 @@
+### Registro
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+  "nombre": "Angel",
+  "apellido": "Quishpe",
+  "email": "leonelquishpe0314@gmail.com",
+  "password": "12345",
+  "rol": "cliente"
+}
+
+### Login
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+  "email": "admin_artemania@gmail.com",
+  "password": "artemania_123456789"
+}
+
+### Login
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+  "email": "leonelquishpe0314@gmail.com",
+  "password": "12345"
+}
+
+### Usuario Perfil
+GET http://localhost:3000/users/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsInVzZXJuYW1lIjoibGVvbmVscXVpc2hwZTAzMTRAZ21haWwuY29tIiwicm9sZSI6ImNsaWVudGUiLCJpYXQiOjE3NDQwNzI1OTYsImV4cCI6MTc0NDA3NjE5Nn0.mFlz_-DMOGBV0AZgKjaQPdyZFg_NpUmkgO2B8ae4dzY

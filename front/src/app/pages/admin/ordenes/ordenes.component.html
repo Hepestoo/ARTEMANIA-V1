@@ -1,0 +1,64 @@
+<section class="tabla-ordenes">
+  <h2>Órdenes</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre cliente</th>
+        <th>Teléfono</th>
+        <th>Dirección</th>
+        <th>Fecha</th>
+        <th>Total</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let orden of ordenes">
+        <td>{{ orden.id }}</td>
+        <td>{{ orden.nombre_cliente || 'Anónimo' }}</td>
+        <td>{{ orden.telefono || '-' }}</td>
+        <td>{{ orden.direccion || '-' }}</td>
+        <td>{{ orden.fecha_creacion | date: 'short' }}</td>
+        <td>{{ orden.total | currency }}</td>
+        <td>
+          <select [(ngModel)]="orden.estado" (change)="cambiarEstado(orden.id, orden.estado)">
+            <option value="pendiente">Pendiente</option>
+            <option value="pagado">Pagado</option>
+          </select>
+        </td>
+        <td>
+          <button (click)="verDetalles(orden)">Ver detalles</button>
+          <button (click)="eliminarOrden(orden.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Detalles de orden -->
+<div class="detalle-orden" *ngIf="ordenSeleccionada">
+  <h3>Detalles de la orden #{{ ordenSeleccionada.id }}</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio unitario</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let d of ordenSeleccionada.detalles">
+        <td>{{ d.producto.nombre }}</td>
+        <td>{{ d.cantidad }}</td>
+        <td>{{ d.precio_unitario | currency }}</td>
+        <td>{{ d.subtotal | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="cerrarDetalles()">Cerrar</button>
+</div>

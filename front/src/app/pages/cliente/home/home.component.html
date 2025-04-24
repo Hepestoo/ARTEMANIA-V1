@@ -1,0 +1,144 @@
+
+<!-- Hero -->
+<section class="hero">
+  <div class="texto">
+    <h1>Bienvenidos a <br><span>ARTEMANIA!</span></h1>
+    <h2>Manualidades, cursos, talleres y más...</h2>
+    <button [routerLink]="'/catalogo'">Ver productos →</button>
+  </div>
+  <img src="https://images.pexels.com/photos/5512621/pexels-photo-5512621.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Hero imagen">
+</section>
+
+<!-- Oferta -->
+<section class="oferta">
+  <p><strong>¡Invierte en tu creatividad!</strong> Aprende, crea y paga cómodamente al finalizar tu curso.</p>
+</section>
+
+<!-- Carrusel cursos -->
+<section class="cursos">
+  <div class="header">
+    <h3>Cursos y talleres disponibles</h3>
+    <a routerLink="/catalogo">Ver más →</a>
+  </div>
+
+  <div class="carousel-wrapper" #carousel>
+    <div class="carousel-cursos">
+      <div class="curso" *ngFor="let curso of cursos">
+        <img [src]="'http://localhost:3000/uploads/productos/' + curso.imagen_url" alt="{{ curso.nombre }}">
+        <h4>{{ curso.nombre }}</h4>
+        <p>{{ curso.descripcion }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+  
+
+<!-- Categorías -->
+<section class="categorias-home" *ngIf="subcategorias && subcategorias.length">
+  <div class="categorias-titulo">
+    <h3>Explora nuestras categorías</h3>
+    <p>Selecciona una categoría para descubrir productos únicos</p>
+  </div>
+  
+  <div class="categorias-botones">
+    <button 
+      *ngFor="let sub of subcategorias" 
+      [routerLink]="['/catalogo']" 
+      [queryParams]="{ sub: sub.id }">
+      {{ sub.nombre }}
+    </button>
+  </div>
+</section>
+
+
+  
+  
+
+<!-- Sección de Testimonios -->
+<section class="testimonios">
+  <h2>Clientes felices</h2>
+  <div class="testimonios-container">
+    <div class="testimonio">
+      <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="María A.">
+      <p class="comentario">“Tomé el taller de velas y fue increíble. ¡Gracias Artemania!”</p>
+      <p class="cliente">– María A.</p>
+    </div>
+    <div class="testimonio">
+      <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Carlos M.">
+      <p class="comentario">“Compré moldes y pigmentos. Todo llegó perfecto y muy rápido.”</p>
+      <p class="cliente">– Carlos M.</p>
+    </div>
+    <div class="testimonio">
+      <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Luisa G.">
+      <p class="comentario">“Volveré a inscribirme en otro taller, ¡la experiencia fue maravillosa!”</p>
+      <p class="cliente">– Luisa G.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Sugerencias -->
+<!-- Sugerencias con mailto -->
+<section class="sugerencias">
+  <div class="sugerencias-content">
+    <!-- Texto izquierdo -->
+    <div class="sugerencias-texto">
+      <h3>Ayúdanos a mejorar!</h3>
+      <p>Cuéntanos tu experiencia y en qué podríamos mejorar</p>
+    </div>
+
+    <!-- Línea divisoria -->
+    <div class="linea-divisoria"></div>
+
+    <!-- Formulario derecho -->
+    <form 
+      class="sugerencias-form" 
+      action="mailto:adl.rivera@yavirac.edu.ec" 
+      method="POST" 
+      enctype="text/plain"
+    >
+      <textarea name="sugerencia" placeholder="Déjanos tu sugerencia..."></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</section>
+
+
+
+<!-- Beneficios -->
+<section class="beneficios">
+  <div class="beneficio">
+    <i class="pi pi-check-circle"></i>
+    <h4>Envíos rápidos y seguros</h4>
+    <p>
+      Ofrecemos una amplia gama de productos que incluyen moldes para resina, bisutería, herramientas y materiales de manualidades, asegurando que encuentres todo lo que necesitas para tus proyectos creativos.
+    </p>
+  </div>
+  <div class="beneficio">
+    <i class="pi pi-star"></i>
+    <h4>Productos de buena calidad</h4>
+    <p>
+      Nos comprometemos a ofrecer productos de la más alta calidad para garantizar la satisfacción del cliente. Cada artículo ha sido cuidadosamente seleccionado y probado para asegurar su durabilidad y rendimiento.
+    </p>
+  </div>
+  <div class="beneficio">
+    <i class="pi pi-home"></i>
+    <h4>Envíos nacionales</h4>
+    <p>
+      Con nuestro servicio de envío a nivel nacional, puedes recibir tus productos de forma rápida y segura en la comodidad de tu hogar. Nos aseguramos de que tus compras lleguen a ti de manera eficiente para que puedas comenzar a crear sin demoras.
+    </p>
+  </div>
+</section>
+
+<a
+  href="https://wa.me/593987526383" 
+  target="_blank"
+  class="whatsapp-float"
+  aria-label="Chatea con nosotros en WhatsApp"
+>
+  <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp">
+</a>
+
+

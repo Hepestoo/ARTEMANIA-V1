@@ -1,0 +1,423 @@
+
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6rem 6rem; /* ↑ antes era 4rem */
+  background-color: #FAFFF6;
+  flex-wrap: wrap;
+  min-height:70vh; /* ← esto hará que sea más larga */
+  gap: 2rem;
+}
+
+  
+  .hero img {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .hero .texto {
+    flex: 1;
+    color: #585858;
+    font-family: "Raleway", "Montserrat";
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  .hero h1 span {
+    color: black;
+    font-size: 5.3rem;
+    font-weight: bold;
+  }
+  
+  .hero h2 {
+    font-size: 1.6rem;
+    color: #585858;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero button {
+    background: #771379;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 1.2rem;
+    margin-left: 3rem;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+    width: 250px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .hero button:hover {
+    background: #5a005a;
+  }
+  
+  /* OFERTA */
+  .oferta {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                url('https://images.pexels.com/photos/316595/pexels-photo-316595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover no-repeat;
+    color: white;
+    padding: 6rem 2rem;
+    height: 80px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Playfair Display", sans serif;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  
+  /* CURSOS */
+  .cursos {
+    background-color: #f9fcf8;
+    padding: 3rem;
+  
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+  
+      h3 {
+        font-size: 1.5rem;
+        color: #393939;
+      }
+  
+      a {
+        color: purple;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+  
+    .carousel-wrapper {
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+  
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  
+    .carousel-cursos {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: nowrap;
+      transition: all 0.3s ease;
+    }
+  
+    .curso {
+      background-color: #dcc6b2;
+      flex: 0 0 calc(25% - 1.2rem);
+      min-width: 250px;
+      height: 420px;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+  
+      &:hover {
+        transform: translateY(-4px);
+      }
+  
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 0.8rem;
+        margin-bottom: 1rem;
+      }
+  
+      h4 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #222;
+        margin-bottom: 1rem;
+      }
+  
+      p {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        word-break: break-word;
+        line-height: 1.4rem;
+        max-height: 2.8rem; /* ~2 líneas */
+      }
+    }
+  }
+  
+  
+  
+  
+  
+  
+  /* CATEGORIAS */
+  .categorias-home {
+    background-color: #F2F2F2;
+    padding: 5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  
+  .categorias-titulo h3 {
+    font-size: 2rem;
+    color: #5e2b97;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0.5rem;
+  }
+  
+  .categorias-titulo p {
+    font-size: 1rem;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .categorias-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    max-width: 1000px;
+  }
+  
+  .categorias-botones button {
+    background: linear-gradient(145deg, #f3e8ff, #fceaff);
+    color: #771379;
+    border: 2px solid #e3c8fc;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(119, 19, 121, 0.1);
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    min-width: 140px;
+  }
+  
+  .categorias-botones button:hover {
+    background: #d8b4fe;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(119, 19, 121, 0.25);
+  }
+  
+  
+  
+  // TESTIMONIOS
+  
+  .testimonios {
+    padding: 6rem 2rem;
+    background-color: #ffffff;
+    text-align: center;
+    height: 600px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .testimonios h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #771379;
+  }
+  
+  .testimonios-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .testimonio {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    max-width: 320px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .testimonio img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonio .comentario {
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+  
+  .testimonio .cliente {
+    font-weight: bold;
+    color: #771379;
+  }
+  
+  /* SUGERENCIAS */
+  .sugerencias {
+    background: url('https://images.pexels.com/photos/4887060/pexels-photo-4887060.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .sugerencias-content {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+  
+  .sugerencias-texto {
+    flex: 1;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .sugerencias-texto h3 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .sugerencias-texto p {
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  
+  .linea-divisoria {
+    width: 2px;
+    height: 60%;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.4;
+  }
+  
+  .sugerencias-form {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .sugerencias-form textarea {
+    width: 100%;
+    max-width: 400px;
+    height: 150px;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    resize: none;
+    color: #000000;
+  }
+  
+  .sugerencias-form button {
+    background-color: #49335D;
+    color: #a1a1a1;
+    width: 100%;
+    max-width: 400px;
+    padding: 0.7rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .sugerencias-form button:hover {
+    background-color: #430e5e;
+  }
+  
+  
+  
+  // BENEFICIOS
+  .beneficios {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-wrap: wrap;
+    padding: 10rem 2rem;
+    background-color: #f9faf6;
+    gap: 2rem;
+    height: 600px;
+  }
+  
+  .beneficio {
+    max-width: 320px;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .beneficio i {
+    font-size: 3rem;
+    color: black;
+    margin-bottom: 1rem;
+  }
+  
+  .beneficio h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+  }
+  
+  .beneficio p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+    font-family: "Roboto";
+  }
+  
+  
+  .whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    background-color: #25d366;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+  }
+  
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+  
+  .whatsapp-float img {
+    width: 50px;
+    height: 50px;
+  }
+  

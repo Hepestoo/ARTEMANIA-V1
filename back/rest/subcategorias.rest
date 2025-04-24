@@ -1,0 +1,27 @@
+### Visualizar todas las subcategorias
+GET http://localhost:3000/subcategorias
+Content-Type: application/json
+
+### Crear una subcategoria (Admin)
+POST http://localhost:3000/subcategorias
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiYWRtaW5fYXJ0ZW1hbmlhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NDA3Mjc0MywiZXhwIjoxNzQ0MDc2MzQzfQ.1Kkl5dsVWQgYF0laIfSNRBEyvZAaWbPC8QJDwJdYyDo
+Content-Type: application/json
+
+{
+  "nombre": "Resinasssss",
+  "categoria_id": 1
+}
+
+### Editar subcategoria (Admin)
+PUT http://localhost:3000/subcategorias/10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiYWRtaW5fYXJ0ZW1hbmlhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NDA3Mjc0MywiZXhwIjoxNzQ0MDc2MzQzfQ.1Kkl5dsVWQgYF0laIfSNRBEyvZAaWbPC8QJDwJdYyDo
+Content-Type: application/json
+
+{
+  "nombre": "Resina Actualizada",
+  "categoria_id": 2
+}
+
+### Eliminar subcategoria (Admin)
+DELETE http://localhost:3000/subcategorias/10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiYWRtaW5fYXJ0ZW1hbmlhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NDA3Mjc0MywiZXhwIjoxNzQ0MDc2MzQzfQ.1Kkl5dsVWQgYF0laIfSNRBEyvZAaWbPC8QJDwJdYyDo

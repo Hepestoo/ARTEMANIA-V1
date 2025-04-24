@@ -1,0 +1,116 @@
+// Estilos generales de la tabla de órdenes
+.tabla-ordenes {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+    overflow-x: auto;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .tabla-ordenes h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  // Tabla general
+  .tabla-ordenes table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .tabla-ordenes th,
+  .tabla-ordenes td {
+    padding: 0.9rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .tabla-ordenes thead {
+    background-color: #f9f9f9;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .tabla-ordenes select {
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  // Botones de acción
+  .tabla-ordenes button {
+    padding: 0.4rem 0.8rem;
+    margin-right: 0.3rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tabla-ordenes button:first-child {
+    background-color: #4a90e2;
+    color: white;
+  }
+  
+  .tabla-ordenes button:first-child:hover {
+    background-color: #3b7bc4;
+  }
+  
+  .tabla-ordenes button:last-child {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .tabla-ordenes button:last-child:hover {
+    background-color: #c0392b;
+  }
+  
+  // Detalles de la orden
+  .detalle-orden {
+    background-color: #fefefe;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+  }
+  
+  .detalle-orden h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .detalle-orden table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+  }
+  
+  .detalle-orden th,
+  .detalle-orden td {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .detalle-orden thead {
+    background-color: #f2f2f2;
+    font-weight: 600;
+  }
+  
+  // Botón cerrar
+  .detalle-orden button {
+    background-color: #5e00aa;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .detalle-orden button:hover {
+    background-color: #430080;
+  }
+  

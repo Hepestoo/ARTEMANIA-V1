@@ -1,0 +1,24 @@
+<section class="tabla-pagos">
+  <h2>Pagos</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Orden</th>
+        <th>Método</th>
+        <th>Monto</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pago of pagos">
+        <td>{{ pago.id }}</td>
+        <td>{{ pago.orden_id }}</td>
+        <td>{{ pago.metodo?.nombre || pago.metodo_pago_id }}</td>
+        <td>{{ pago.monto | currency }}</td>
+        <td>{{ pago.fecha_pago | date: 'short' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

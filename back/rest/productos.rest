@@ -1,0 +1,37 @@
+### Ver todos los productos
+GET http://localhost:3000/productos
+
+
+### Ver un solo producto por ID
+GET http://localhost:3000/productos/1
+
+
+### Crear un producto (solo admin)
+POST http://localhost:3000/productos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiYWRtaW5fYXJ0ZW1hbmlhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NDkwOTM1NSwiZXhwIjoxNzQ0OTEyOTU1fQ.k7d9PsG0DCDQC489rQb1axYLLufitZutAVpkZgsh8R4
+Content-Type: application/json
+
+{
+  "nombre": "Caja decorativa",
+  "descripcion": "Hecha a mano con materiales reciclados.",
+  "precio": 15.50,
+  "stock": 10,
+  "subcategoria_id": 3,
+  "imagen_url": "https://example.com/caja.jpg",
+  "destacado": true
+}
+
+
+### Editar producto (solo admin)
+PUT http://localhost:3000/productos/21
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiYWRtaW5fYXJ0ZW1hbmlhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NDkxNTU3OSwiZXhwIjoxNzQ0OTE5MTc5fQ.hH29qpuRbx3UDZSYxtys0k8sCF9qXddoEaWJl2XqLGc
+Content-Type: application/json
+
+{
+  "subcategoria_id": 3,
+}
+
+
+### Eliminar producto (solo admin)
+DELETE http://localhost:3000/productos/21
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXJuYW1lIjoiYWRtaW5fYXJ0ZW1hbmlhQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NDkxOTk3NywiZXhwIjoxNzQ0OTIzNTc3fQ.ntCGtVSHx_tAZNOeh7C5eUD_T2kDjAR80lEbRJwOLCc
