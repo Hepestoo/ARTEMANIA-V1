@@ -7,8 +7,8 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   app.enableCors({
-    origin: 'http://localhost:4200',
-    credentials: true,
+    origin: ['http://localhost:4200', 'https://artemania-v1.onrender.com'],
+    credentials: true,  
   });
 
   app.useStaticAssets(join(__dirname, '..', 'uploads'), {

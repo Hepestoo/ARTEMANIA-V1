@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface Orden {
   id: number;
@@ -37,7 +38,8 @@ export interface Orden {
   providedIn: 'root'
 })
 export class OrdenService {
-  private api = 'http://localhost:3000/ordenes';
+  private apiUrl = environment.apiUrl;
+  private api = `${this.apiUrl}/ordenes`;
 
   constructor(private http: HttpClient) {}
 

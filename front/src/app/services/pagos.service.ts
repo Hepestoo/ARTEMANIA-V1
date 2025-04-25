@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface Pago {
   id: number;
@@ -16,7 +17,8 @@ export interface Pago {
 
 @Injectable({ providedIn: 'root' })
 export class PagosService {
-  private api = 'http://localhost:3000/pagos';
+  private apiUrl = environment.apiUrl;
+  private api = `${this.apiUrl}/pagos`;
 
   constructor(private http: HttpClient) {}
 

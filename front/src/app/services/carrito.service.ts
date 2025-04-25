@@ -3,13 +3,14 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { CarritoStateService } from './carrito-state.service';
 import { tap } from 'rxjs/operators';
-
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoService {
-  private apiUrl = 'http://localhost:3000/carrito';
+  private apiUrl = environment.apiUrl;
+  private api = `${this.apiUrl}/carrito`;
 
   // Observable para el contador
   private totalItemsSubject = new BehaviorSubject<number>(this.obtenerCantidadGuardada());
